@@ -1,4 +1,4 @@
-# Sprint Challenge: Data Structures and Algorithms
+# Sprint Challenge: Data Structures and Algorithms 
 
 For the data structures portion of this sprint challenge, you'll be implementing a few functions that build off of some of the data structures you implemented in the first half of the week. Then you'll be analyzing the runtimes of these functions.
 
