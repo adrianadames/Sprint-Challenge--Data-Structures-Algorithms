@@ -1,11 +1,64 @@
+# Stack's alternative name is LIFO (last in, first out)
+class Stack:
+    def __init__(self):
+      self.items = []
+    
+    def push(self,item):
+      self.items.append(item)
+
+    def pop(self):
+      return self.items.pop()
+
 class BinarySearchTree:
   def __init__(self, value):
     self.value = value
     self.left = None
     self.right = None
 
+  # def depth_first_for_each(self, cb):
+  #   visited = []
+  #   stack = Stack()
+  #   stack.push(self.value)
+  #   while stack:
+  #     node = stack.pop()
+  #     visited.append(node)
+  #     if node.right:
+  #       stack.push(node.right)
+  #     if node.left:
+  #       stack.push(node.left)
+  #   print(visited) 
+
+  # def depth_first_for_each(self):
+  #   visited = []
+  #   stack = Stack()
+  #   stack.push(self.value)
+  #   while stack:
+  #     node = stack.pop()
+  #     visited.append(node)
+  #     if node.right:
+  #       stack.push(node.right)
+  #     if node.left:
+  #       stack.push(node.left)
+  #   print(visited)
+
   def depth_first_for_each(self, cb):
-    pass    
+    visited = []
+    stack = Stack()
+    stack.push(self.value)
+    print(stack.items)
+    while len(stack.items) > 0:
+      node = stack.pop()
+      print(node)
+      visited.append(node)
+      print(visited)
+      if self.value.right:
+        stack.push(self.value.right)
+        # print(stack.items)
+      # if node.left:
+      #   stack.push(node.left)
+      #   print(stack.items)
+    # print(visited)
+  
 
   def breadth_first_for_each(self, cb):
     pass
@@ -44,3 +97,22 @@ class BinarySearchTree:
         max_value = current.value
       current = current.right
     return max_value
+
+
+
+
+
+
+
+bst1 = BinarySearchTree(8)
+bst1.insert(8)
+bst1.insert(3)
+bst1.insert(1)
+bst1.insert(6)
+bst1.insert(4)
+bst1.insert(7)
+bst1.insert(10)
+bst1.insert(14)
+bst1.insert(13)
+
+bst1.depth_first_for_each()
