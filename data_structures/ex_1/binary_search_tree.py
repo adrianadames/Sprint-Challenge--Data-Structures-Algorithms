@@ -15,49 +15,8 @@ class BinarySearchTree:
     self.left = None
     self.right = None
 
-  # def depth_first_for_each(self, cb):
-  #   visited = []
-  #   stack = Stack()
-  #   stack.push(self.value)
-  #   while stack:
-  #     node = stack.pop()
-  #     visited.append(node)
-  #     if node.right:
-  #       stack.push(node.right)
-  #     if node.left:
-  #       stack.push(node.left)
-  #   print(visited) 
-
-  # def depth_first_for_each(self):
-  #   visited = []
-  #   stack = Stack()
-  #   stack.push(self.value)
-  #   while stack:
-  #     node = stack.pop()
-  #     visited.append(node)
-  #     if node.right:
-  #       stack.push(node.right)
-  #     if node.left:
-  #       stack.push(node.left)
-  #   print(visited)
-
   def depth_first_for_each(self, cb):
-    visited = []
-    stack = Stack()
-    stack.push(self.value)
-    print(stack.items)
-    while len(stack.items) > 0:
-      node = stack.pop()
-      print(node)
-      visited.append(node)
-      print(visited)
-      if self.value.right:
-        stack.push(self.value.right)
-        # print(stack.items)
-      # if node.left:
-      #   stack.push(node.left)
-      #   print(stack.items)
-    # print(visited)
+    pass
   
 
   def breadth_first_for_each(self, cb):
@@ -104,15 +63,15 @@ class BinarySearchTree:
 
 
 
-bst1 = BinarySearchTree(8)
-bst1.insert(8)
-bst1.insert(3)
-bst1.insert(1)
-bst1.insert(6)
-bst1.insert(4)
-bst1.insert(7)
-bst1.insert(10)
-bst1.insert(14)
-bst1.insert(13)
+# bst1 = BinarySearchTree(8)
+# bst1.insert(8)
+# bst1.insert(3)
+# bst1.insert(1)
+# bst1.insert(6)
+# bst1.insert(4)
+# bst1.insert(7)
+# bst1.insert(10)
+# bst1.insert(14)
+# bst1.insert(13)
 
-bst1.depth_first_for_each()
+# bst1.depth_first_for_each()
