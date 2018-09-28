@@ -102,15 +102,31 @@ class BinarySearchTree:
       current = current.right
     return max_value
 
-bst1 = BinarySearchTree(8)
-bst1.insert(3)
-bst1.insert(1)
-bst1.insert(6)
-bst1.insert(4)
-bst1.insert(7)
-bst1.insert(10)
-bst1.insert(14)
-bst1.insert(13)
+# bst1 = BinarySearchTree(8)
+# bst1.insert(3)
+# bst1.insert(1)
+# bst1.insert(6)
+# bst1.insert(4)
+# bst1.insert(7)
+# bst1.insert(10)
+# bst1.insert(14)
+# bst1.insert(13)
+
+bst = BinarySearchTree(5)
+# bst.insert(2)
+# bst.insert(3)
+# bst.insert(7)
+# bst.insert(9)
+
+
+bst.insert(3)
+bst.insert(4)
+bst.insert(10)
+bst.insert(9)
+bst.insert(11)
 
 # print(bst1.depth_first_for_each(lambda x:x))
-print(bst1.breadth_first_for_each(lambda x:x))
+# print(bst1.breadth_first_for_each(lambda x:x))
+
+# print(bst.depth_first_for_each(lambda x:x))
+print(bst.breadth_first_for_each(lambda x:x))
