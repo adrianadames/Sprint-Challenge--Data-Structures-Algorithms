@@ -15,26 +15,24 @@ class BinarySearchTree:
     self.left = None
     self.right = None
 
-  # def depth_first_for_each(self, cb):
   def depth_first_for_each(self):
     dfsContainer = []
     stack = Stack()
-    current = BinarySearchTree(self.value)
+    currentNode = self
     finished = False
 
     while finished is False:
-      if current is not None:
-        stack.push(current.value)
-        current = current.left
+      if currentNode is not None:
+        stack.push(currentNode)
+        currentNode = currentNode.left
       else:
         if len(stack.items)>0:
-          current = BinarySearchTree(stack.pop())
-          dfsContainer.append(current.value)
-          current = current.right
+          currentNode = stack.pop()
+          dfsContainer.append(currentNode.value)
+          currentNode = currentNode.right
         else:
           finished = True
     print(dfsContainer)
-
 
   def breadth_first_for_each(self, cb):
     pass
@@ -101,5 +99,6 @@ bst1.insert(14)
 # print(bst1.left.left.value)
 # print(bst1.right.value)
 # print(bst1.right.right.value)
+# print(bst1.value)
 
 bst1.depth_first_for_each()
