@@ -56,7 +56,6 @@ class BinarySearchTree:
     
     if currentNode:
       queue.enqueue(currentNode)
-
     while len(queue.items)>0:
       currentNode = queue.dequeue()
       if currentNode not in traversed:
@@ -103,26 +102,6 @@ class BinarySearchTree:
       current = current.right
     return max_value
 
-
-
-# stack1 = Stack()
-# stack1.push(4)
-# stack1.push(5)
-# stack1.push(6)
-# print(stack1.items)
-# print(stack1.pop())
-# print(stack1.items)
-
-# q1 = Queue()
-# q1.enqueue(4)
-# q1.enqueue(5)
-# q1.enqueue(6)
-# q1.enqueue(7)
-# print(q1.items)
-# q1.dequeue()
-# print(q1.items)
-
-
 bst1 = BinarySearchTree(8)
 bst1.insert(3)
 bst1.insert(1)
@@ -133,12 +112,5 @@ bst1.insert(10)
 bst1.insert(14)
 bst1.insert(13)
 
-# print(bst1.value)
-# print(bst1.left.value)
-# print(bst1.left.left.value)
-# print(bst1.right.value)
-# print(bst1.right.right.value)
-# print(bst1.value)
-
-# bst1.depth_first_for_each(lambda x:x)
+# print(bst1.depth_first_for_each(lambda x:x))
 print(bst1.breadth_first_for_each(lambda x:x))
