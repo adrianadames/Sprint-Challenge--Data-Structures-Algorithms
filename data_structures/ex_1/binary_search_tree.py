@@ -15,7 +15,7 @@ class BinarySearchTree:
     self.left = None
     self.right = None
 
-  def depth_first_for_each(self):
+  def depth_first_for_each(self, cb):
     dfsContainer = []
     stack = Stack()
     currentNode = self
@@ -101,4 +101,4 @@ bst1.insert(14)
 # print(bst1.right.right.value)
 # print(bst1.value)
 
-bst1.depth_first_for_each()
+bst1.depth_first_for_each(lambda x:x)
