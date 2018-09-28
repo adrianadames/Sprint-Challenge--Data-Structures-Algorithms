@@ -37,24 +37,25 @@ class BinarySearchTree:
     # Pre-order dfs traversal
     if currentNode:
       stack.push(currentNode)
-      # dfsContainer.append(currentNode.value)
-      while finished is False:
-        if currentNode is not None:
-          stack.push(currentNode.left)
-          currentNode = currentNode.left
-        else:
-          if len(stack.items)>0:
-            currentNode = stack.pop()
-            dfsContainer.append(currentNode.value)
-            currentNode = currentNode.right
-          else:
-            finished = True
-      return dfsContainer 
+    while len(stack.items)>0:
+      currentNode = stack.pop()
+      dfsContainer.append(currentNode.value)
+      if currentNode.right:
+        stack.push(currentNode.right)
+      if currentNode.left:
+        stack.push(currentNode.left)
+    return(dfsContainer)
 
-    
+
     # #In-order dfs traversal
     # #something is wrong with this code, but I think it's close to working
     # #this code outputs something like a in order dfs traversal, but problem statement looking for pre-order
+    # def depth_first_for_each(self, cb):
+    #   dfsContainer = []
+    #   stack = Stack()
+    #   currentNode = self
+    #   finished = False
+    #
     # while finished is False:
     #   if currentNode is not None:
     #     stack.push(currentNode)
