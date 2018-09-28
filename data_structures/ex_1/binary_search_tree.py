@@ -34,24 +34,44 @@ class BinarySearchTree:
     currentNode = self
     finished = False
 
-    while finished is False:
-      if currentNode is not None:
-        stack.push(currentNode)
-        currentNode = currentNode.left
-      else:
-        if len(stack.items)>0:
-          currentNode = stack.pop()
-          dfsContainer.append(currentNode.value)
-          currentNode = currentNode.right
+    # Pre-order dfs traversal
+    if currentNode:
+      stack.push(currentNode)
+      # dfsContainer.append(currentNode.value)
+      while finished is False:
+        if currentNode is not None:
+          stack.push(currentNode.left)
+          currentNode = currentNode.left
         else:
-          finished = True
-    return dfsContainer
+          if len(stack.items)>0:
+            currentNode = stack.pop()
+            dfsContainer.append(currentNode.value)
+            currentNode = currentNode.right
+          else:
+            finished = True
+      return dfsContainer 
+
+    
+    # #In-order dfs traversal
+    # #something is wrong with this code, but I think it's close to working
+    # #this code outputs something like a in order dfs traversal, but problem statement looking for pre-order
+    # while finished is False:
+    #   if currentNode is not None:
+    #     stack.push(currentNode)
+    #     currentNode = currentNode.left
+    #   else:
+    #     if len(stack.items)>0:
+    #       currentNode = stack.pop()
+    #       dfsContainer.append(currentNode.value)
+    #       currentNode = currentNode.right
+    #     else:
+    #       finished = True
+    # return dfsContainer
 
   def breadth_first_for_each(self, cb):
     bfsContainer = []
     queue = Queue()
     currentNode = self
-    finished = False
     traversed = []
     
     if currentNode:
@@ -113,20 +133,20 @@ class BinarySearchTree:
 # bst1.insert(13)
 
 bst = BinarySearchTree(5)
-# bst.insert(2)
-# bst.insert(3)
-# bst.insert(7)
-# bst.insert(9)
-
-
+bst.insert(2)
 bst.insert(3)
-bst.insert(4)
-bst.insert(10)
+bst.insert(7)
 bst.insert(9)
-bst.insert(11)
+
+
+# bst.insert(3)
+# bst.insert(4)
+# bst.insert(10)
+# bst.insert(9)
+# bst.insert(11)
 
 # print(bst1.depth_first_for_each(lambda x:x))
 # print(bst1.breadth_first_for_each(lambda x:x))
 
-# print(bst.depth_first_for_each(lambda x:x))
-print(bst.breadth_first_for_each(lambda x:x))
+print(bst.depth_first_for_each(lambda x:x))
+# print(bst.breadth_first_for_each(lambda x:x))
