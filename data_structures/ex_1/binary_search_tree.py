@@ -32,7 +32,6 @@ class BinarySearchTree:
     dfsContainer = []
     stack = Stack()
     currentNode = self
-    finished = False
 
     # Pre-order dfs traversal
     if currentNode:
