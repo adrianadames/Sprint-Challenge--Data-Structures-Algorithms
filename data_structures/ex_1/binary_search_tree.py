@@ -133,21 +133,26 @@ class BinarySearchTree:
 # bst1.insert(14)
 # bst1.insert(13)
 
-bst = BinarySearchTree(5)
-bst.insert(2)
-bst.insert(3)
-bst.insert(7)
-bst.insert(9)
-
-
-# bst.insert(3)
-# bst.insert(4)
-# bst.insert(10)
-# bst.insert(9)
-# bst.insert(11)
-
 # print(bst1.depth_first_for_each(lambda x:x))
 # print(bst1.breadth_first_for_each(lambda x:x))
 
-print(bst.depth_first_for_each(lambda x:x))
-# print(bst.breadth_first_for_each(lambda x:x))
+#DFS example (values inserted are the same as those in test_binary_search_tree.py)
+bst2 = BinarySearchTree(5)
+bst2.insert(2)
+bst2.insert(3)
+bst2.insert(7)
+bst2.insert(9)
+print(bst2.depth_first_for_each(lambda x:x))
+
+#BFS example (values inserted are the same as those in test_binary_search_tree.py)
+bst3 = BinarySearchTree(5)
+bst3.insert(3)
+bst3.insert(4)
+bst3.insert(10)
+bst3.insert(9)
+bst3.insert(11)
+print(bst3.breadth_first_for_each(lambda x:x))
+
+
+
+
