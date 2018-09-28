@@ -45,7 +45,7 @@ class BinarySearchTree:
           currentNode = currentNode.right
         else:
           finished = True
-    print(dfsContainer)
+    return dfsContainer
 
   def breadth_first_for_each(self, cb):
     bfsContainer = []
@@ -53,24 +53,20 @@ class BinarySearchTree:
     currentNode = self
     finished = False
     traversed = []
+    
+    if currentNode:
+      queue.enqueue(currentNode)
 
-    while finished is False:
-      if currentNode is not None:
-        queue.enqueue(currentNode)
-        # bfsContainer.append(currentNode.value)
+    while len(queue.items)>0:
+      currentNode = queue.dequeue()
+      if currentNode not in traversed:
+        traversed.append(currentNode)
+        bfsContainer.append(currentNode.value)
         if currentNode.left:
           queue.enqueue(currentNode.left)
         if currentNode.right:
           queue.enqueue(currentNode.right)
-        traversed.append(currentNode)
-        removed = queue.dequeue()
-        if removed is not in traversed:
-          currentNode = currentNode.
-        else:
-          finished = True
-
-        
-
+    return bfsContainer
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
@@ -130,12 +126,12 @@ class BinarySearchTree:
 bst1 = BinarySearchTree(8)
 bst1.insert(3)
 bst1.insert(1)
-# bst1.insert(6)
-# bst1.insert(4)
-# bst1.insert(7)
+bst1.insert(6)
+bst1.insert(4)
+bst1.insert(7)
 bst1.insert(10)
 bst1.insert(14)
-# bst1.insert(13)
+bst1.insert(13)
 
 # print(bst1.value)
 # print(bst1.left.value)
@@ -145,4 +141,4 @@ bst1.insert(14)
 # print(bst1.value)
 
 # bst1.depth_first_for_each(lambda x:x)
-bst1.breadth_first_for_each(lambda x:x)
+print(bst1.breadth_first_for_each(lambda x:x))
